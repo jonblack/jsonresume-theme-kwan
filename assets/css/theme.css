@@ -98,6 +98,7 @@ body {
 }
 .contact-details {
   display: table-cell;
+  text-align: center;
 }
 .contact-details .detail {
   display: inline-block;
@@ -113,9 +114,7 @@ body {
 }
 .social-links {
   line-height: 2.5;
-}
-.social-link {
-  display: block;
+  text-align: center;
 }
 .social-link span {
   display: inline-block;
