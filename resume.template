@@ -116,46 +116,47 @@
               </h4>
               <ul class="list-unstyled">
                 {{#each resume.work}}
-                  <li class="card-nested">
-                    <div class="content has-sidebar">
-                      <p class="clear-margin-sm">
-                        <strong>{{position}}</strong>,
-                        {{#if website}}
-                          <a href="{{website}}" target="_blank">{{company}}</a>
-                        {{else}}
-                          {{company}}
-                        {{/if}}
-                      </p>
-                      <p class="text-muted">
-                        <small>
-                          <span class="space-right">
-                            {{startDate}} -
-                            {{#if endDate}}
-                              {{endDate}}
-                            {{else}}
-                              Present
-                            {{/if}}
-                          </span>
-
-                          {{#if duration}}
-                            <span>
-                              <i class="fa fa-clock-o icon-left"></i>
-                              {{duration}}
-                            </span>
+                  <section class="work">
+                    <li class="card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>{{position}}</strong>,
+                          {{#if website}}
+                            <a href="{{website}}" target="_blank">{{company}}</a>
+                          {{else}}
+                            {{company}}
                           {{/if}}
-                        </small>
-                      </p>
-                      <p>{{summary}}</p>
-                      {{#if highlights}}
-                        <ul>
-                          {{#each highlights}}
-                            <li> {{.}} </li>
-                          {{/each}}
-                        </ul>
-                      {{/if}}
-                    </div>
+                        </p>
+                        <p class="text-muted">
+                          <small>
+                            <span class="space-right">
+                              {{startDate}} -
+                              {{#if endDate}}
+                                {{endDate}}
+                              {{else}}
+                                Present
+                              {{/if}}
+                            </span>
 
-                  </li>
+                            {{#if duration}}
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                {{duration}}
+                              </span>
+                            {{/if}}
+                          </small>
+                        </p>
+                        <p>{{summary}}</p>
+                        {{#if highlights}}
+                          <ul>
+                            {{#each highlights}}
+                              <li> {{.}} </li>
+                            {{/each}}
+                          </ul>
+                        {{/if}}
+                      </div>
+                    </li>
+                  </section>
                 {{/each}}
               </ul>
             </section>
@@ -168,7 +169,7 @@
               <ul class="list-unstyled">
                 {{#each resume.skills}}
                   <li class="card-nested skill {{skill_class}}">
-                    <strong>{{name}} ({{skill_class}}):</strong>
+                    <strong>{{name}}:</strong>
                     {{#keywords}}
                       <span class="enumeration">{{.}}</span>
                     {{/keywords}}
@@ -201,16 +202,18 @@
                           {{/if}}
                         </small>
                       </p>
-                      <i>{{gpa}}</i>
-                      <div class="space-top labels">
-                        {{#courses}}
-                          <span class="label label-keyword">{{.}}</span>
-                        {{/courses}}
-                      </div>
+                      {{#if courses}}
+                        <div class="space-top labels">
+                          {{#courses}}
+                            <span class="label label-keyword">{{.}}</span>
+                          {{/courses}}
+                        </div>
+                      {{/if}}
                     </div>
                   </li>
                 {{/each}}
               </ul>
+            </section>
 
             {{#if resume.awards}}
             <section id="awards">

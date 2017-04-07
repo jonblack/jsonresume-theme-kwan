@@ -19,6 +19,10 @@
     display: table-cell;
     text-align: center;
 
+    .name-and-profession h3 {
+      margin-top: 0;
+    }
+
     .detail {
         display: inline-block;
         line-height: 2;
@@ -87,7 +91,7 @@
 
 .background-card section {
     &:not(:first-child) h4 {
-        margin-top: 2em;
+        margin-top: 1em;
     }
 }
 
@@ -114,7 +118,23 @@ h4 > .fa {
 }
 
 .card-nested {
-    padding: 1.5rem 0 1.5rem @iconWidth + .2rem;
+    padding: .5rem 0 .5rem @iconWidth + .2rem;
+}
+
+section.work {
+  .card-nested {
+    padding: 1rem 0 0 @iconWidth + .2rem;
+  }
+}
+
+section#education {
+  .card-nested {
+    padding: 0 0 0 @iconWidth + .2rem;
+  }
+
+  .text-muted {
+      margin: 0;
+  }
 }
 
 .card-wrapper {

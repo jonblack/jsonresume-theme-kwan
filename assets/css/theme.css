@@ -100,6 +100,9 @@ body {
   display: table-cell;
   text-align: center;
 }
+.contact-details .name-and-profession h3 {
+  margin-top: 0;
+}
 .contact-details .detail {
   display: inline-block;
   line-height: 2;
@@ -289,7 +292,7 @@ body {
   line-height: 1.2;
 }
 .background-card section:not(:first-child) h4 {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 h4 > .fa,
 h4 > .title {
@@ -309,7 +312,16 @@ h4 > .fa {
   padding: 2em 3.5em;
 }
 .card-nested {
-  padding: 1.5rem 0 1.5rem 4.2rem;
+  padding: 0.5rem 0 0.5rem 4.2rem;
+}
+section.work .card-nested {
+  padding: 1rem 0 0 4.2rem;
+}
+section#education .card-nested {
+  padding: 0 0 0 4.2rem;
+}
+section#education .text-muted {
+  margin: 0;
 }
 .card-wrapper {
   padding: 5px;
@@ -340,6 +352,15 @@ h4 > .fa {
 }
 .card-skills {
   position: relative;
+}
+.skill {
+  padding: 1.5rem 0 1.5rem 4.2rem;
+}
+.skill:not(:last-child) {
+  padding-bottom: 0.25rem;
+}
+.skill:not(:first-child) {
+  padding-top: 0.25rem;
 }
 .skill-info {
   margin-left: 20px;
@@ -396,12 +417,6 @@ h4 > .fa {
     padding-bottom: 0.5em;
     margin-bottom: 0.5em;
     margin-top: 1em !important;
-  }
-  h4 > .fa {
-    display: none !important;
-  }
-  .card-nested {
-    padding: .5rem 0 .5rem 0;
   }
   .labels {
     display: inline;
