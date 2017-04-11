@@ -116,7 +116,6 @@ body {
   font-size: 0.8em;
 }
 .social-links {
-  line-height: 2.5;
   text-align: center;
 }
 .social-link span {
@@ -321,6 +320,12 @@ section#education .card-nested {
   padding: 0 0 0 4.2rem;
 }
 section#education .text-muted {
+  margin: 0;
+}
+section#projects .card-nested {
+  padding: 0 0 0 4.2rem;
+}
+section#projects .card-nested p.description {
   margin: 0;
 }
 .clear-margin-sm {

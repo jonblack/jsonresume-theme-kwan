@@ -87,7 +87,7 @@
             <div class="social-links">
               {{#profiles}}
                 <a class="social-link" href="{{url}}" target="_blank">
-                  <span class="fa fa-{{toClassName network}} fa-2x"></span> 
+                  <span class="fa fa-{{toClassName network}} fa-lg"></span> 
                   <span class="social-link-text">{{url}}</span>
                 </a>
               {{/profiles}}
@@ -221,6 +221,41 @@
                 {{/each}}
               </ul>
             </section>
+
+            {{#if resume.projects}}
+            <section id="projects">
+              <h4 id="projects">
+                <span class="fa fa-lg fa-code-fork"></span>
+                <span class="title">Projects</span>
+              </h4>
+              <ul class="list-unstyled">
+                {{#each resume.projects}}
+                  <li class="card-nested">
+                    <div class="content has-sidebar project">
+                      <p class="clear-margin-sm">
+                        <strong>
+                          <a href="{{url}}"  target="_blank">{{name}}</a>
+                        </strong>
+                      </p>
+                      {{#if startDate}}
+                      <p class="text-muted">
+                        <small>
+                          {{startDate}} -
+                          {{#if endDate}}
+                            {{endDate}}
+                          {{else}}
+                            Present
+                          {{/if}}
+                        </small>
+                      </p>
+                      {{/if}}
+                      <p class="description">{{description}}</p>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+            </section>
+            {{/if}}
 
             {{#if resume.awards}}
             <section id="awards">
