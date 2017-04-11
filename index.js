@@ -195,6 +195,17 @@ function render(resume) {
     Handlebars.registerHelper('toClassName', function(text) {
         return text.toLowerCase().replace(/ /, '-');
     })
+
+    Handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
+      if (arguments.length < 3)
+        throw new Error("Handlebars Helper equal needs 2 parameters");
+      if( lvalue!=rvalue ) {
+        return options.inverse(this);
+      } else {
+        return options.fn(this);
+      }
+    });
+
     return Handlebars.compile(template)({
         css: css,
         resume: resume

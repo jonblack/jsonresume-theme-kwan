@@ -197,12 +197,16 @@
                       </p>
                       <p class="text-muted">
                         <small>
-                          {{startDate}} -
-                          {{#if endDate}}
-                            {{endDate}}
+                          {{#equal startDate endDate}}
+                            {{startDate}}
                           {{else}}
-                            Currently Pursuing
-                          {{/if}}
+                            {{startDate}} -
+                            {{#if endDate}}
+                              {{endDate}}
+                            {{else}}
+                              Currently Pursuing
+                            {{/if}}
+                          {{/equal}}
                         </small>
                       </p>
                       {{#if courses}}
